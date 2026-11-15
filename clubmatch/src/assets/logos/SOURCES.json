@@ -1,0 +1,122 @@
+[
+  {
+    "id": "3d4e",
+    "club": "3D For Everyone",
+    "source": "https://engage.usc.edu/student_community?club_id=35464"
+  },
+  {
+    "id": "apo",
+    "club": "Alpha Phi Omega",
+    "source": "https://engage.usc.edu/student_community?club_id=35514"
+  },
+  {
+    "id": "acm",
+    "club": "Association for Computing Machinery",
+    "source": "https://engage.usc.edu/student_community?club_id=35591"
+  },
+  {
+    "id": "auv",
+    "club": "Autonomous Underwater Vehicle Design Team",
+    "source": "https://engage.usc.edu/student_community?club_id=35607"
+  },
+  {
+    "id": "chanoyu",
+    "club": "Chanoyu Tea Club",
+    "source": "https://engage.usc.edu/student_community?club_id=35685"
+  },
+  {
+    "id": "clubgolf",
+    "club": "Club Golf",
+    "source": "https://engage.usc.edu/student_community?club_id=36851"
+  },
+  {
+    "id": "clubsoftball",
+    "club": "Club Softball",
+    "source": "https://engage.usc.edu/student_community?club_id=35724"
+  },
+  {
+    "id": "ctc",
+    "club": "Code the Change",
+    "source": "https://engage.usc.edu/student_community?club_id=35729"
+  },
+  {
+    "id": "dfa",
+    "club": "Design for America",
+    "source": "https://engage.usc.edu/student_community?club_id=35771"
+  },
+  {
+    "id": "hacksc",
+    "club": "HackSC",
+    "source": "https://engage.usc.edu/student_community?club_id=35933"
+  },
+  {
+    "id": "innod",
+    "club": "Innovative Design at USC",
+    "source": "https://engage.usc.edu/student_community?club_id=35994"
+  },
+  {
+    "id": "lavalab",
+    "club": "LavaLab",
+    "source": "https://engage.usc.edu/student_community?club_id=36145"
+  },
+  {
+    "id": "makers",
+    "club": "Makers",
+    "source": "https://engage.usc.edu/student_community?club_id=36171"
+  },
+  {
+    "id": "openalpha",
+    "club": "Open Alpha at USC",
+    "source": "https://engage.usc.edu/student_community?club_id=36319"
+  },
+  {
+    "id": "athena",
+    "club": "Project Athena",
+    "source": "https://engage.usc.edu/student_community?club_id=36411"
+  },
+  {
+    "id": "quantsc",
+    "club": "Quant SC",
+    "source": "https://engage.usc.edu/student_community?club_id=36422"
+  },
+  {
+    "id": "solarcar",
+    "club": "SC Solar Car Team",
+    "source": "https://engage.usc.edu/student_community?club_id=36504"
+  },
+  {
+    "id": "scope",
+    "club": "Scope SC",
+    "source": "https://engage.usc.edu/student_community?club_id=36528"
+  },
+  {
+    "id": "sparksc",
+    "club": "Spark SC",
+    "source": "https://engage.usc.edu/student_community?club_id=36601"
+  },
+  {
+    "id": "climbing",
+    "club": "Trojan Climbing",
+    "source": "https://engage.usc.edu/student_community?club_id=35720"
+  },
+  {
+    "id": "tfc",
+    "club": "Trojan Filmmakers Club",
+    "source": "https://engage.usc.edu/student_community?club_id=37285"
+  },
+  {
+    "id": "tis",
+    "club": "Trojan Investing Society",
+    "source": "https://engage.usc.edu/student_community?club_id=36781"
+  },
+  {
+    "id": "troycamp",
+    "club": "Troy Camp",
+    "source": "https://engage.usc.edu/student_community?club_id=36819"
+  },
+  {
+    "id": "usil",
+    "club": "Undergraduate Students in Linguistics",
+    "source": "https://engage.usc.edu/student_community?club_id=36831"
+  }
+]

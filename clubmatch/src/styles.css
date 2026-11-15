@@ -133,6 +133,7 @@ button:disabled { cursor: not-allowed; opacity: 0.45; }
   display: inline-grid; place-items: center; flex: none;
   border-radius: 12px; font-weight: 800; letter-spacing: -0.04em;
 }
+.mono-logo { object-fit: contain; background: #fff; border: 1px solid var(--line); }
 
 /* AI notes: the one recurring accent is a gold rule */
 .ai-note {
@@ -196,11 +197,19 @@ button:disabled { cursor: not-allowed; opacity: 0.45; }
   box-shadow: 0 18px 40px -22px rgba(60, 10, 10, 0.45);
 }
 .card-behind { transform: scale(0.95) translateY(14px); opacity: 0.85; z-index: 1; }
-.card-art { position: relative; flex: 1 1 46%; min-height: 150px; overflow: hidden; }
+.card-art {
+  position: relative; flex: 1 1 46%; min-height: 160px; overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: flex-end; padding: 44px 22px 18px;
+}
+/* Initials sit fully inside the color field: sized to the field, never cropped */
 .card-mono {
-  position: absolute; right: -10px; bottom: -34px;
-  font-size: clamp(150px, 46vw, 210px); font-weight: 800; letter-spacing: -0.07em; line-height: 1;
-  opacity: 0.92; font-variation-settings: 'opsz' 96;
+  font-size: clamp(84px, 26vw, 120px); font-weight: 800; letter-spacing: -0.05em; line-height: 0.82;
+  font-variation-settings: 'opsz' 96; white-space: nowrap; padding-right: 0.04em;
+}
+.card-logo {
+  width: clamp(104px, 32vw, 136px); height: clamp(104px, 32vw, 136px); object-fit: contain;
+  background: #fff; border-radius: 22px; padding: 6px;
+  box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.5); pointer-events: none; user-select: none;
 }
 .card-cat { position: absolute; left: 18px; top: 16px; font-weight: 700; font-size: 14px; }
 .gem { position: absolute; left: 18px; top: 42px; background: var(--gold); color: var(--ink); font-size: 13px; font-weight: 750; padding: 3px 10px; border-radius: 999px; }
@@ -289,8 +298,10 @@ button:disabled { cursor: not-allowed; opacity: 0.45; }
 .bubble { max-width: 82%; padding: 10px 14px; border-radius: 18px; font-size: 15px; }
 .bubble.me { align-self: flex-end; background: var(--cardinal); color: #fff; border-bottom-right-radius: 6px; }
 .bubble.them { align-self: flex-start; background: var(--ground); border-bottom-left-radius: 6px; }
-.openers { display: flex; flex-direction: column; gap: 8px; }
-.opener { text-align: left; border: 1.5px solid var(--line); background: var(--paper); border-radius: 14px; padding: 10px 14px; font-size: 15px; }
+.thread-empty { margin: auto 0; text-align: center; color: var(--muted); font-size: 15px; padding: 24px 12px; }
+.openers { display: flex; flex-direction: column; gap: 6px; padding-top: 8px; border-top: 1px solid var(--line); }
+.openers .ai-note-head { margin-bottom: 2px; }
+.opener { text-align: left; border: 1.5px solid var(--line); background: var(--paper); border-radius: 14px; padding: 8px 12px; font-size: 14px; }
 .opener:hover { border-color: var(--ink); }
 .composer { display: flex; gap: 8px; padding: 10px 0 calc(14px + env(safe-area-inset-bottom)); position: sticky; bottom: 0; background: var(--paper); }
 .round-send { width: 48px; height: 48px; background: var(--cardinal); color: #fff; border-color: var(--cardinal); flex: none; }

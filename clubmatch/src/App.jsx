@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { StoreProvider, useStore } from './store.jsx';
 import { NavCtx } from './nav.js';
 import { Icon } from './ui.jsx';
@@ -31,6 +31,12 @@ function Shell() {
   const needsOnboarding = role === 'student' && !state.profile;
   const inThread = role === 'student' && tab === 'messages' && openId;
   useEffect(() => { window.scrollTo(0, 0); }, [tab, role, needsOnboarding, openId]);
+  // Finishing onboarding (or signing in again after a reset) always lands on Discover.
+  const wasOnboarding = useRef(needsOnboarding);
+  useEffect(() => {
+    if (wasOnboarding.current && !needsOnboarding) { setTab('discover'); setOpenId(null); }
+    wasOnboarding.current = needsOnboarding;
+  }, [needsOnboarding]);
 
   return (
     <NavCtx.Provider value={nav}>

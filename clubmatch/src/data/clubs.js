@@ -189,7 +189,7 @@ export const SEED_CLUBS = [
   },
   // ---- Sports & rec ----
   {
-    id: 'climbing', name: 'Climbing Club', category: 'sports', popularity: 7,
+    id: 'climbing', name: 'Trojan Climbing', category: 'sports', popularity: 7,
     summary: 'Inclusive climbing community with twice-weekly practices at a climbing gym and weekend outdoor trips; beginners welcome.',
     hook: 'You’d learn to climb safely and get certified.',
     tags: { outdoors: 1, sports: 0.7, community: 0.6 }, access: 'open', accessNote: 'All levels welcome; semester dues.', link: CLUB_SPORTS, beginner: true,
@@ -214,7 +214,7 @@ export const SEED_CLUBS = [
     tags: { culture: 1, community: 0.5 }, access: 'ask', link: ENGAGE, beginner: true,
   },
   {
-    id: 'usil', name: 'USiL (Linguistics)', category: 'culture', popularity: 2,
+    id: 'usil', name: 'Undergraduate Students in Linguistics (USiL)', category: 'culture', popularity: 2,
     summary: 'Student-run organization for anyone curious about linguistics and language.',
     hook: 'You’d nerd out about how language works.',
     tags: { language: 1, community: 0.4 }, access: 'ask', link: ENGAGE, beginner: true,

@@ -1,4 +1,5 @@
 import { CATEGORIES } from './data/taxonomy.js';
+import { LOGOS } from './data/logos.js';
 
 const paths = {
   x: <path d="M6 6l12 12M18 6L6 18" />,
@@ -37,6 +38,9 @@ export function initials(name) {
 
 export function Monogram({ club, size = 44 }) {
   const cat = CATEGORIES[club.category] || CATEGORIES.culture;
+  if (LOGOS[club.id]) {
+    return <img className="mono mono-logo" src={LOGOS[club.id]} alt="" width={size} height={size} />;
+  }
   return (
     <span className="mono" style={{ background: cat.color, color: cat.ink, width: size, height: size, fontSize: size * 0.4 }}>
       {initials(club.name)}

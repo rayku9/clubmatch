@@ -172,6 +172,8 @@ export function tasteProfile(profile, learned) {
 // ---------- explanations ----------
 export function explainMatch(club, profile, learned, swipedClubs = []) {
   const cv = clubVector(club);
+  // Lowercase labels for mid-sentence use, but keep acronyms like AI, ML, UX.
+  const lc = (label) => label.split(' ').map((w) => (/^[A-Z&]+$/.test(w) ? w : w.toLowerCase())).join(' ');
   const reasons = [];
   for (const [id, cw] of Object.entries(cv)) {
     const pt = profile?.tags?.[id];
@@ -190,8 +192,8 @@ export function explainMatch(club, profile, learned, swipedClubs = []) {
   const top = reasons.slice(0, 2);
   let line;
   if (!top.length) line = `Something different: ${club.hook}`;
-  else if (top.length === 1) line = `Fits your interest in ${top[0].label.toLowerCase()}. ${club.hook}`;
-  else line = `Fits your interest in ${top[0].label.toLowerCase()} and ${top[1].label.toLowerCase()}. ${club.hook}`;
+  else if (top.length === 1) line = `Fits your interest in ${lc(top[0].label)}. ${club.hook}`;
+  else line = `Fits your interest in ${lc(top[0].label)} and ${lc(top[1].label)}. ${club.hook}`;
   return { line, reasons: top };
 }
 

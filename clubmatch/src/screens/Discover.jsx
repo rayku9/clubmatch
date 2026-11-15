@@ -3,6 +3,7 @@ import { useStore } from '../store.jsx';
 import { rankDeck, explainMatch, tasteProfile } from '../ai/engine.js';
 import { CATEGORIES } from '../data/taxonomy.js';
 import { AccessBadge, Icon, initials } from '../ui.jsx';
+import { LOGOS } from '../data/logos.js';
 import ClubSheet from './ClubSheet.jsx';
 import { useNav } from '../nav.js';
 
@@ -134,7 +135,9 @@ function Card({ item, behind, profile, learned, liked, intent }) {
   return (
     <article className={`card ${behind ? 'card-behind' : ''}`} aria-hidden={behind || undefined}>
       <div className="card-art" style={{ background: cat.color, color: cat.ink }}>
-        <span className="card-mono">{initials(club.name)}</span>
+        {LOGOS[club.id]
+          ? <img className="card-logo" src={LOGOS[club.id]} alt={`${club.name} logo`} draggable="false" />
+          : <span className="card-mono">{initials(club.name)}</span>}
         <span className="card-cat">{cat.label}</span>
         {gem && <span className="gem">Hidden gem</span>}
         {intent === 'right' && <span className="stamp stamp-save">Save</span>}

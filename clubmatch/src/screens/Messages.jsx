@@ -67,9 +67,11 @@ function Thread({ club, onBack }) {
   const [error, setError] = useState('');
   const [reported, setReported] = useState(false);
   const [info, setInfo] = useState(false);
+  const [openersUsed, setOpenersUsed] = useState(false);
   const end = useRef(null);
   const msgs = state.threads[club.id] || [];
   const openers = suggestOpeners(club, state.profile);
+  const showOpeners = msgs.length === 0 && !openersUsed;
 
   useEffect(() => { end.current?.scrollIntoView({ block: 'end' }); }, [msgs.length]);
 
@@ -95,17 +97,18 @@ function Thread({ club, onBack }) {
       </header>
       {reported && <div className="notice">Reported. A Campus Activities moderator will review this conversation. <button className="link" onClick={() => setReported(false)}>Dismiss</button></div>}
       <div className="bubbles">
-        {msgs.length === 0 && (
-          <div className="openers">
-            <div className="ai-note-head"><Icon name="spark" size={14} stroke={2.2} /> Suggested openers, based on your profile</div>
-            {openers.map((o) => <button key={o} className="opener" onClick={() => setText(o)}>{o}</button>)}
-          </div>
-        )}
+        {msgs.length === 0 && <p className="thread-empty">Say hi to {club.name}. Ask how to get involved, when they meet, or what members do.</p>}
         {msgs.map((m, i) => (
           <div key={i} className={`bubble ${m.from === 'student' ? 'me' : 'them'}`}>{m.text}</div>
         ))}
         <div ref={end} />
       </div>
+      {showOpeners && (
+        <div className="openers">
+          <div className="ai-note-head"><Icon name="spark" size={14} stroke={2.2} /> Suggested openers, based on your profile</div>
+          {openers.map((o) => <button key={o} className="opener" onClick={() => { setText(o); setOpenersUsed(true); }}>{o}</button>)}
+        </div>
+      )}
       {error && <div className="notice notice-error">{error}</div>}
       {warn && (
         <div className="notice">
